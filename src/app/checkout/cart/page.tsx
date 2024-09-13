@@ -20,7 +20,7 @@ const Cart: React.FC = () => {
           <CartList/>
           </div>
           <Link href={'/users/login'}>
-            <div className='w-80 h-36 border inline-block  p-8 max-lg:hidden float-left'>
+            <div className='w-80 h-36 border inline-block  p-8 max-lg:hidden max-xl:left-10 left-72 absolute '>
               <LoginIcon className='text-yellow-500' />
               <h1 className='inline-block font-bold mr-2'>ورود به حساب کاربری</h1>
               &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<KeyboardBackspaceIcon className='opacity-75' /><br />

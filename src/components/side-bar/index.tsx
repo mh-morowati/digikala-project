@@ -14,7 +14,8 @@ const Sidebar: React.FC<SidebarProps> = ({ discount, count, numDiscount, product
 
   const addToBasket = () => {
     const existingItems = JSON.parse(localStorage.getItem('basketItems') || '[]');
-    const updatedItems = [...existingItems, productName];
+    const newItem = { productName, count };
+    const updatedItems = [...existingItems, newItem];
     localStorage.setItem('basketItems', JSON.stringify(updatedItems));
   };
 

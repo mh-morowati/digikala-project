@@ -1,7 +1,7 @@
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import DivDiscountTwo from "@/components/wonder-dis/div-two";
-import DivCount from '@/components/wonder-dis/div/div-count';
+import DivDiscount from '@/components/wonder-dis/div/div-count';
 import Link from 'next/link';
 
 
@@ -10,13 +10,13 @@ function NewStyle() {
         <div className='min-h-96 mt-10'>
             <div className='mr-8'>
                 <h1 className='font-bold text-zinc-800 underline cursor-default underline-offset-[14px] decoration-red-500'>دامن زنانه</h1>
-               <Link href={'/product/dkp-31549/SkirtSM-2123'}><DivCount imageSrc={'/landing-img/new-style/5c9cb6109fe67c.webp'} productName={'دامن زنانه مدل SM-2123'} numDiscount={'290000'} /></Link>
-               <Link href={'/product/dkp-31549/Skirt2568852'}><DivCount imageSrc={'/landing-img/new-style/5c84d791a13038ba2.webp'} productName={'دامن زنانه مدل کرپ پیلی کره ای کد2568852'} numDiscount={'407000'} /></Link>
+               <Link href={'/product/dkp-31549/SkirtSM-2123'}><DivDiscount imageSrc={'/landing-img/new-style/5c9cb6109fe67c.webp'} productName={'دامن زنانه مدل SM-2123'} numDiscount={'290000'} /></Link>
+               <Link href={'/product/dkp-31549/Skirt2568852'}><DivDiscount imageSrc={'/landing-img/new-style/5c84d791a13038ba2.webp'} productName={'دامن زنانه مدل کرپ پیلی کره ای کد2568852'} numDiscount={'407000'} /></Link>
                <Link href={'/product/dkp-31549/Skirt33333'}><DivDiscountTwo imageSrc={'/landing-img/new-style/243de77fedd8b.webp'} productName={'دامن زنانه مدل تابستانه رنگ مشکی'} discount={'10%'} count={'298000'} numDiscount={'268200'} /></Link>
-               <Link href={'/product/dkp-31549/Skirt44444'}><DivCount imageSrc={'/landing-img/new-style/444e5e24b8224f0a.webp'} productName={'دامن زنانه مدل ریون تمام کلوش کد a.056'} numDiscount={'302000'} /></Link>
+               <Link href={'/product/dkp-31549/Skirt44444'}><DivDiscount imageSrc={'/landing-img/new-style/444e5e24b8224f0a.webp'} productName={'دامن زنانه مدل ریون تمام کلوش کد a.056'} numDiscount={'302000'} /></Link>
                <Link href={'/product/dkp-31549/Skirt5555'}><DivDiscountTwo imageSrc={'/landing-img/new-style/2959d9f7e07160.webp'} productName={'دامن زنانه اسمارا مدل جین کاغذی 2022'} discount={'13%'} count={'380000'} numDiscount={'330000'} /></Link>
-               <Link href={'/product/dkp-31549/Skirt6666'}><DivCount imageSrc={'/landing-img/new-style/b1bc6d834e6cd.webp'} productName={'دامن زنانه مدل بندی'} numDiscount={'183000'} /></Link>
-               <Link href={'/product/dkp-31549/Skirt77777'}><DivCount imageSrc={'/landing-img/new-style/d4367bbf4f63b57c0c.webp'} productName={'دامن زنانه مدل aramco'} numDiscount={'457000'} /></Link>
+               <Link href={'/product/dkp-31549/Skirt6666'}><DivDiscount imageSrc={'/landing-img/new-style/b1bc6d834e6cd.webp'} productName={'دامن زنانه مدل بندی'} numDiscount={'183000'} /></Link>
+               <Link href={'/product/dkp-31549/Skirt77777'}><DivDiscount imageSrc={'/landing-img/new-style/d4367bbf4f63b57c0c.webp'} productName={'دامن زنانه مدل aramco'} numDiscount={'457000'} /></Link>
             </div>
 
             <div className='mr-8 mt-8'>
@@ -47,7 +47,7 @@ function NewStyle() {
                productName={'ساعت مچی عقربه ای زنانه پوداگار مدل 005 PG'} discount={'33%'} count={'2850000'} numDiscount={'1899000'} /></Link>
                <Link href={'/product/dkp-31549/watch-luxury615'}><DivDiscountTwo imageSrc={'/landing-img/new-style/watch/ab29564e6594d5.webp'} 
                productName={'ساعت مچی عقربه‌ای مردانه پوداگار مدل 615 luxury'} discount={'41%'} count={'3200000'} numDiscount={'1899000'} /></Link>
-               <Link href={'/product/dkp-31549/watch-manRomanson'}><DivCount imageSrc={'/landing-img/new-style/watch/bec8cd418634d3aa3a70.webp'} 
+               <Link href={'/product/dkp-31549/watch-manRomanson'}><DivDiscount imageSrc={'/landing-img/new-style/watch/bec8cd418634d3aa3a70.webp'} 
                productName={'ساعت مچی عقربه‌ای مردانه رومانسون مدل سه موتور'} numDiscount={'1420000'} /></Link>
                <Link href={'/product/dkp-31549/watch-MR928G-55'}><DivDiscountTwo imageSrc={'/landing-img/new-style/watch/e6f468172397b3d6674.webp'}
                 productName={'ساعت مچی عقربه‌ای مردانه پوداگار مدل MR928G'} discount={'40%'} count={'4000000'} numDiscount={'2399000'} /></Link>
