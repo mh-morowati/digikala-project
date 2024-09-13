@@ -1,5 +1,6 @@
 'use client'
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 
@@ -11,6 +12,8 @@ const LoginApi: React.FC<LoginApiProps> = () => {
   const [step, setStep] = useState<number>(1);
   const [emailOrNumber, setEmailOrNumber] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+
+  const router = useRouter();
 
  const onclick = ()=>{
   setInform('hidden')
@@ -42,6 +45,7 @@ const LoginApi: React.FC<LoginApiProps> = () => {
       if (res.status === 200) {
         setMassage('');
         alert('ورود موفق');
+        router.push('/');
         // Redirect or do something upon successful login
       }
     } catch (error) {

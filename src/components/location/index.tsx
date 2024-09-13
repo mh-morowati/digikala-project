@@ -6,6 +6,11 @@ import MyLocationIcon from '@mui/icons-material/MyLocation';
 function Location() {
   const [showMessage, setShowMessage] = useState(false);
   const [showCityList, setShowCityList] = useState(false);
+  const [city, setCity] = useState('لطفا شهر خود را انتخاب کنید')
+
+  const onclick = (c:string) =>{
+    setCity(c);
+  }
 
   useEffect(() => {
     const handleMouseEnter = () => {
@@ -42,10 +47,10 @@ function Location() {
     <>
     <MyLocationIcon className='opacity-70 h-[22px] cursor-pointer' onClick={handleClick} />
       <p
-        className="mt-2 mr-2 text-sm inline-block opacity-75 cursor-pointer city-selection-text"
+        className="mt-2 mr-2 text-sm inline-block opacity-75 cursor-pointer city-selection-text w-[162px]"
         onClick={handleClick}
       >
-        لطفا شهر خود را انتخاب کنید
+        {city}
       </p>
       {showMessage && (
         <div className="absolute bg-gray-700 text-white py-3 px-4 rounded-md">
@@ -57,7 +62,7 @@ function Location() {
           <span>انتخاب شهر</span> <button onClick={closeCityListy} className="text-red-600 fixed left-12"><ClearIcon className="w-7 h-7" /></button><hr className="my-4" />
           <MyLocationIcon className="text-sky-500 my-4 ml-3" /><span className="text-sky-500">مکان‌یابی خودکار</span>
           {cities.map((city) => (
-            <li key={city} className="py-2 px-4 cursor-pointer hover:bg-gray-200">
+            <li key={city} className="py-2 px-4 cursor-pointer hover:bg-gray-200" onClick={() => onclick(city)}>
               {city}
             </li>
           ))}
