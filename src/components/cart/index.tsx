@@ -5,7 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 interface BasketItem {
   productName: string;
-  count: string;
+  numDiscount: string;
 }
 
 function CartList() {
@@ -17,7 +17,7 @@ function CartList() {
       const items = JSON.parse(localStorage.getItem('basketItems') || '[]');
       setBasketItems(items);
 
-      const total = items.reduce((sum: number, item: BasketItem) => sum + parseInt(item.count) , 0);
+      const total = items.reduce((sum: number, item: BasketItem) => sum + parseInt(item.numDiscount) , 0);
         setTotalPrice(total);
     }, []);
     const clearBasket = () => {
@@ -30,7 +30,7 @@ function CartList() {
         localStorage.setItem('basketItems', JSON.stringify(updatedItems));
         setBasketItems(updatedItems);
 
-        const total = updatedItems.reduce((sum: number, item: BasketItem) => sum + parseInt(item.count), 0);
+        const total = updatedItems.reduce((sum: number, item: BasketItem) => sum + parseInt(item.numDiscount), 0);
         setTotalPrice(total);
       }
      
@@ -39,7 +39,7 @@ function CartList() {
             basketItems.map((item, index) => (
               <div key={index} className='w-[70%] border inline-block max-lg:border-none max-lg:mx-auto max-lg:block py-2'>
                 <p className='inline-block text-sm'>{item.productName} <span
-                 className='font-bold text-xs border py-2 text-zinc-800 mr-3 bg-yellow-200'>{item.count}تومان</span></p>
+                 className='font-bold text-xs border py-2 text-zinc-800 mr-3 bg-yellow-200'>{item.numDiscount}تومان</span></p>
                 <span onClick={() => deleteItem(index)} className='mr-3 text-red-600 cursor-pointer'><DeleteIcon/></span>
               </div> ))
           ) : (
