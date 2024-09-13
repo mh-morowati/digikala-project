@@ -4,7 +4,6 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import DiscountIcon from '@mui/icons-material/Discount';
-import LoginIcon from '@mui/icons-material/Login';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import SearchIcon from '@mui/icons-material/Search';
 import Link from 'next/link';
@@ -13,12 +12,15 @@ import HomeIcon from '@mui/icons-material/Home';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import ProductList from '@/components/product-list';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import Acount from '../accounts/index';
+import { useState } from 'react';
+
 
 
 function ProfileHeader() {
-    return (<>
+   
+   
+    return (<div>
         <div className="h-44 border border-zinc-300 max-lg:h-32 max-lg:border-none">
             <div className='fixed bg-white z-50 max-lg:relative'>
                 <div className="h-16 2xl:mb-5">
@@ -35,10 +37,8 @@ function ProfileHeader() {
                 <div className='inline-block float-left max-lg:hidden'>
                     <div className='inline-block border-l pl-3 border-zinc-300'>
                         
-                            <button className="bg-white font-bold py-2 px-3 rounded-md opacity-90 cursor-pointer">
-                                
-                               <PersonOutlineIcon className='w-8 h-8'/>
-                               <ArrowDropDownIcon className='opacity-75'/>
+                            <button className="bg-white font-bold py-2 px-3 rounded-md cursor-pointer">
+                                <Acount/>
                             </button>
                         
                     </div>
@@ -89,7 +89,7 @@ function ProfileHeader() {
                     </div>
                 </div>
             </div>
-        </div></>);
+        </div></div>);
 }
 
 export default ProfileHeader;
