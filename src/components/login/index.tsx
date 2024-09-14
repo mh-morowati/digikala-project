@@ -43,8 +43,7 @@ const LoginApi: React.FC<LoginApiProps> = () => {
       });
       
       if (res.status === 200) {
-        setMassage('');
-        alert('ورود موفق');
+        setMassage('ورود موفق');
         router.push('/profile');
         // Redirect or do something upon successful login
       }

@@ -44,7 +44,7 @@ function Acount() {
                 <span className='mr-20 bg-red-500 py-1 px-2 text-white rounded-md font-serif text-base'>۲۸</span></h1>
                 <hr className='my-3' />
                 <Link href={'/'}>
-                <h1 className='text-zinc-700'><LogoutIcon className=' ml-2' />خروج از حساب کاربری</h1>
+                <h1 className='text-zinc-700 hover:bg-slate-300'><LogoutIcon className=' ml-2' />خروج از حساب کاربری</h1>
                 </Link>
 
             </div>)
