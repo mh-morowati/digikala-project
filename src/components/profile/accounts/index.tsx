@@ -3,7 +3,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -13,10 +13,24 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import Link from 'next/link';
 
 function Acount() {
-    const [showAccount, setShowAccount] = useState(false);
+    const [showAccount, setShowAccount] = useState<boolean>(false);
+    const accountRef = useRef<HTMLDivElement>(null);
+
     const onclick = () => {
-        setShowAccount(true);
+        setShowAccount(prev => !prev);
     }
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if(accountRef.current && !accountRef.current.contains(event.target as Node)){
+                setShowAccount(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () =>{
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [accountRef])
     
     return (<>
         <div onClick={onclick}>
