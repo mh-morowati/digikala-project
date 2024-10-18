@@ -1,5 +1,4 @@
 // pages/api/products/[id].ts
-
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Product = {
