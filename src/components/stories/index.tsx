@@ -18,6 +18,8 @@ function Stories() {
               setVideoUrl(null);
               setProductUrl('');
        };
+       
+          
        return (<div>
               <div className="w-20 h-20 rounded-full border-[3px] border-purple-600 cursor-pointer inline-block mr-5
          bg-[url('/videos/pic/Galaxy-Tab-A8.webp')] bg-cover bg-center"
