@@ -18,6 +18,7 @@ const LoginApi: React.FC<LoginApiProps> = () => {
  const onclick = ()=>{
   setInform('hidden')
  }
+ 
   const validateEmailOrNumber = (input: string): boolean => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phonePattern = /^09[0-9]{9}$/; // Updated pattern to start with "091" and followed by 8 digits

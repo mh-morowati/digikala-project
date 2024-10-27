@@ -11,7 +11,7 @@ interface BasketItem {
 function CartList() {
     const [basketItems, setBasketItems] = useState<BasketItem[]>([]);
     const [totalPrice, setTotalPrice] = useState(0);
-
+ 
 
     useEffect(() => {
       const items = JSON.parse(localStorage.getItem('basketItems') || '[]');
