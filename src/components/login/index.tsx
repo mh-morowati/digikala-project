@@ -36,7 +36,6 @@ const LoginApi: React.FC<LoginApiProps> = () => {
     }
   };
 
-  
   const handleLogin = async () => {
     try {
       const res = await axios.post(`/api/login/1`, {
