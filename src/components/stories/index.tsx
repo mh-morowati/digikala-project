@@ -1,77 +1,103 @@
 'use client'
-import ClearIcon from '@mui/icons-material/Clear';
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-import Link from 'next/link';
-import { useState } from "react";
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout'
+import Link from 'next/link'
+import { useState } from "react"
+import Modal from '@mui/material/Modal'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box';
 
 
 function Stories() {
-       const [videoUrl, setVideoUrl] = useState<string | null>(null)
-       const playVideo = (url: string) => {
-              setVideoUrl(url);
-       };
+
+       const [open, setOpen] = useState(false)
+       const handleOpen = () => setOpen(true)
+
+       const handleClose = () => setOpen(false)
+       const [videoUrl, setVideoUrl] = useState<string>('')
+
        const [productUrl, setProductUrl] = useState<string>('')
+
+       const playVideo = (url: string) => {
+              setVideoUrl(url)
+       }
+
        const linkUrl = (url: string) => {
-              setProductUrl(url);
-       };
-       const closeVideo = () => {
-              setVideoUrl(null);
-              setProductUrl('');
-       };
-       
-          
-       return (<div>
-              <div className="w-20 h-20 rounded-full border-[3px] border-purple-600 cursor-pointer inline-block mr-5
-         bg-[url('/videos/pic/Galaxy-Tab-A8.webp')] bg-cover bg-center"
-                     onClick={() => {playVideo('/videos/GtabA8.mp4'),linkUrl('/product/dkp-31549/Galaxy-Tab-A8')}}>
-              </div>
-              <div className="w-20 h-20 rounded-full border-[3px] border-purple-600 p-2 cursor-pointer inline-block mr-5
- bg-[url('/videos/pic/s23fe.jpg')] bg-cover bg-center"
-                     onClick={() => {playVideo('/videos/s23fe.mp4'),linkUrl('/product/dkp-31549/s23fe')}}>
+              setProductUrl(url)
+       }
 
-              </div>
-              <div className="w-20 h-20 rounded-full border-[3px] border-purple-600 p-2 cursor-pointer inline-block mr-5
- bg-[url('/videos/pic/s24.webp')] bg-cover bg-center"
-                     onClick={() => {playVideo('/videos/s24.mp4'),linkUrl('/product/dkp-31549/s24')}}>
+       const getVideoUrl = [
+              '/videos/GtabA8.mp4',
+              '/videos/s23fe.mp4',
+              '/videos/s24.mp4',
+              '/videos/360.mp4',
+              '/videos/GtabA8.mp4',
+              '/videos/s23fe.mp4',
+              '/videos/s24.mp4',
+              '/videos/360.mp4']
 
-              </div>
-              <div className="w-20 h-20 rounded-full border-[3px] border-purple-600 p-2 cursor-pointer inline-block mr-5
- bg-[url('/videos/pic/dermatipic.webp')] bg-cover bg-center"
-                     onClick={() => {playVideo('/videos/360.mp4'),linkUrl('/product/dkp-31549/dermatipic-light-cream')}}>
+       const link = [
+              '/product/dkp-31549/Galaxy-Tab-A8',
+              '/product/dkp-31549/s23fe',
+              '/product/dkp-31549/s24',
+              '/product/dkp-31549/dermatipic-light-cream',
+              '/product/dkp-31549/Galaxy-Tab-A8',
+              '/product/dkp-31549/s23fe',
+              '/product/dkp-31549/s24',
+              '/product/dkp-31549/dermatipic-light-cream']
 
-              </div>
-              {/*again*/}
-              <div className="w-20 h-20 rounded-full border-[3px] border-purple-600 cursor-pointer inline-block mr-5
-         bg-[url('/videos/pic/4afc270677c7ddd.jpg')] bg-cover bg-center"
-                     onClick={() => {playVideo('/videos/GtabA8.mp4'),linkUrl('/product/dkp-31549/Galaxy-Tab-A8')}} >
-              </div>
-              <div className="w-20 h-20 rounded-full border-[3px] border-purple-600 p-2 cursor-pointer inline-block mr-5
- bg-[url('/videos/pic/-original-imagztn77hdgmeka.webp')] bg-cover bg-center"
-                     onClick={() => {playVideo('/videos/s23fe.mp4'),linkUrl('/product/dkp-31549/s23fe')}}>
+       const bgImage = [
+              '/videos/pic/Galaxy-Tab-A8.webp',
+              '/videos/pic/s23fe.jpg',
+              '/videos/pic/s24.webp',
+              '/videos/pic/dermatipic.webp',
+              '/videos/pic/Galaxy-Tab-A8.webp',
+              '/videos/pic/s23fe.jpg',
+              '/videos/pic/s24.webp',
+              '/videos/pic/dermatipic.webp']
 
-              </div>
-              <div className="w-20 h-20 rounded-full border-[3px] border-purple-600 p-2 cursor-pointer inline-block mr-5
- bg-[url('/videos/pic/download.jpg')] bg-cover bg-center"
-                     onClick={() => {playVideo('/videos/s24.mp4'),linkUrl('/product/dkp-31549/s24')}}>
-
-              </div>
-              <div className="w-20 h-20 rounded-full border-[3px] border-purple-600 p-2 cursor-pointer inline-block mr-5
- bg-[url('/videos/pic/04.29-35.jpg')] bg-cover bg-center"
-                     onClick={() => {playVideo('/videos/360.mp4'),linkUrl('/product/dkp-31549/dermatipic-light-cream')}}>
-
-              </div>
-
-              {videoUrl && (
-                     <div className="absolute top-1 z-[9999999]">
-                            <button onClick={closeVideo} className='text-red-600 bg-yellow-200 px-4 text-xl  py-1'>
-                                   <b>exit</b>
-                                   <ClearIcon className='bg-yellow-300 mr-3' />
+       return (<div className='flex gap-5 overflow-x-scroll md:overflow-x-auto'>
+              {getVideoUrl.map((video, index) => (
+                     <>
+                            <div>
+                            <button
+                                   style={{
+                                          backgroundImage: `url(${bgImage[index]})`,
+                                          backgroundSize: 'cover',
+                                          backgroundPosition: 'center',
+                                   }}
+                                   className='w-14 h-14 md:h-20 md:w-20 rounded-full border-[3px] border-purple-600'
+                                   key={index}
+                                   onClick={() => { handleOpen(), playVideo(video), linkUrl(link[index]) }}
+                            >
                             </button>
-                            <Link href={productUrl}><button className='float-left bg-yellow-300 px-3 py-1'>خرید این کالا <ShoppingCartCheckoutIcon/></button></Link>
-                            <video src={videoUrl} controls autoPlay className="w-full h-96 max-sm:h-60 max-mobile-l:h-[208px] max-mobile-m:h-44"></video>
-                     </div>
-              )}
-       </div>);
+                            </div>
+                            <Modal open={open}
+                                   className='w-96 h-96 max-sm:w-full mx-auto absolute z-50'
+                                   onClose={handleClose}
+                            >
+                                 <Box>
+                                 <Typography>
+                                          <Link href={productUrl}>
+                                                 <button
+                                                        className=' bg-yellow-300 px-3 py-1'
+                                                 >
+                                                        خرید این کالا <ShoppingCartCheckoutIcon />
+                                                 </button>
+                                          </Link>
+                                          <video
+                                                 src={videoUrl}
+                                                 controls autoPlay
+                                                 className="w-96 h-96 max-sm:h-60 max-mobile-l:h-[208px] max-mobile-m:h-44"
+                                          >
+
+                                          </video>
+                                   </Typography>
+                                 </Box>
+
+                            </Modal>
+                     </>
+              ))}
+       </div>)
 }
 
-export default Stories;
+export default Stories

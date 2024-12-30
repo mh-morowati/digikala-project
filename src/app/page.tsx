@@ -12,7 +12,7 @@ export default function Home() {
  <><Header/>
     <main className="min-h-[400px]">
       {/*استوریها */}
-      <div className='mr-32 mt-4 max-xl:h-[77px] max-lg:mr-1 max-xl:overflow-x-scroll'>
+      <div className='mr-32 mt-4 max-xl:h-[77px] max-lg:mr-1'>
         <Stories />
       </div>
     
