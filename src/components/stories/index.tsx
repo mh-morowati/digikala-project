@@ -59,40 +59,41 @@ function Stories() {
               {getVideoUrl.map((video, index) => (
                      <>
                             <div>
-                            <button
-                                   style={{
-                                          backgroundImage: `url(${bgImage[index]})`,
-                                          backgroundSize: 'cover',
-                                          backgroundPosition: 'center',
-                                   }}
-                                   className='w-14 h-14 md:h-20 md:w-20 rounded-full border-[3px] border-purple-600'
-                                   key={index}
-                                   onClick={() => { handleOpen(), playVideo(video), linkUrl(link[index]) }}
-                            >
-                            </button>
+                                   <button
+                                          style={{
+                                                 backgroundImage: `url(${bgImage[index]})`,
+                                                 backgroundSize: 'cover',
+                                                 backgroundPosition: 'center',
+                                          }}
+                                          className='w-14 h-14 md:h-20 md:w-20 rounded-full border-[3px] border-purple-600'
+                                          key={index}
+                                          onClick={() => { handleOpen(), playVideo(video), linkUrl(link[index]) }}
+                                   >
+                                   </button>
                             </div>
-                            <Modal open={open}
+                            <Modal
+                                   open={open}
                                    className='w-96 h-96 max-sm:w-full mx-auto absolute z-50'
                                    onClose={handleClose}
                             >
-                                 <Box>
-                                 <Typography>
-                                          <Link href={productUrl}>
-                                                 <button
-                                                        className=' bg-yellow-300 px-3 py-1'
+                                   <Box>
+                                          <Typography>
+                                                 <Link href={productUrl}>
+                                                        <button
+                                                               className=' bg-yellow-300 px-3 py-1'
+                                                        >
+                                                               خرید این کالا <ShoppingCartCheckoutIcon />
+                                                        </button>
+                                                 </Link>
+                                                 <video
+                                                        src={videoUrl}
+                                                        controls autoPlay
+                                                        className="w-96 h-96 max-sm:h-60 max-mobile-l:h-[208px] max-mobile-m:h-44"
                                                  >
-                                                        خرید این کالا <ShoppingCartCheckoutIcon />
-                                                 </button>
-                                          </Link>
-                                          <video
-                                                 src={videoUrl}
-                                                 controls autoPlay
-                                                 className="w-96 h-96 max-sm:h-60 max-mobile-l:h-[208px] max-mobile-m:h-44"
-                                          >
 
-                                          </video>
-                                   </Typography>
-                                 </Box>
+                                                 </video>
+                                          </Typography>
+                                   </Box>
 
                             </Modal>
                      </>
