@@ -23,8 +23,8 @@ export default function Home() {
       </div>
       {/*پیشنهادهای شگفت انگیز*/}
       <div 
-      className='h-72 bg-red-500 mt-64 rounded-xl w-[88%] mx-auto max-xl:w-[98%]
-       max-lg:mt-44 max-xl:overflow-x-scroll max-md:mt-5 2xl:mt-96'
+      className='h-72 bg-red-500 mt-64 rounded-xl mx-auto max-xl:w-[98%]
+       max-lg:mt-44 max-md:mt-5 2xl:mt-96 flex'
        >
         <WonderDiscount/>
       </div>
